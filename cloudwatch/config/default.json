@@ -1,0 +1,14 @@
+{
+    "AWS": {
+        "region": {
+            "singapore": "ap-southeast-1"
+        },
+        "apiVersion": {
+            "sqs": "2012-11-05",
+            "dynamoDb": "2012-08-10"
+        }
+    },
+    "CACHE": {
+        "TTL": 300
+    }
+}

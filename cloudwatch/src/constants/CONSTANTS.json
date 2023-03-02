@@ -1,0 +1,102 @@
+{
+  "CONFIG": {
+    "DEFAULT": {
+      "PORT": 3000,
+      "DEVELOPMENT": "development"
+    },
+    "AWS": {
+      "REGIONS": {
+        "SINGAPORE": "AWS.region.singapore"
+      },
+      "API_VERSION": {
+        "SQS": "AWS.apiVersion.sqs",
+        "DYNAMODB": "AWS.apiVersion.dynamoDb"
+      }
+    },
+    "CACHE": {
+      "TTL": "CACHE.TTL"
+    }
+  },
+  "ROUTES": {
+    "API": "/api",
+    "REPORTS_SERVICE": "/reports-service",
+    "NOTIFICATIONS_API": "/notifications-api"
+  },
+  "CONTROLLERS": {
+    "DYNAMODB": {
+      "GET_ALL": "/get-all"
+    },
+    "REPORTS": {
+      "TICKET_COUNT_HISTORY": "/ticket-count-history",
+      "TICKETS_ASSIGNED_PER_RIDER": "/tickets-assigned-per-rider",
+      "ORIGIN_VS_DESTINATION_VOLUME": "/origin-vs-destination-volume"
+    },
+    "NOTIFICATIONS_API": {
+      "GET_NOTIFICATIONS": "/get-notifications",
+      "SAVE_NOTIFICATIONS": "/save-notifications",
+      "SAVE_NOTIFICATIONS_BY_BATCH": "/save-notifications-by-batch",
+      "TOGGLE": "/toggle",
+      "SOFT_DELETE": "/soft-delete"
+    }
+  },
+  "DYNAMODB": {
+    "TABLES": {
+      "OLDDEV_BRAD_REQUESTS": "olddev_brad_requests",
+      "BRAD": "brad"
+    },
+    "ERRORS": {
+      "RESOURCE_IN_USER_EXCEPTION": "ResourceInUseException"
+    },
+    "DEFAULTS": {
+      "CREATE": {
+        "READ_CAPACITY_UNITS": 1,
+        "WRITE_CAPACITY_UNITS": 1
+      }
+    },
+    "OLDDEV_BRAD_REQUESTS_TABLE": {
+      "STATUS": {
+        "COMPLETED": "Completed",
+        "IN_PROGRESS": "In Progress",
+        "DELAYED": "Delayed",
+        "CANCELLED": "Cancelled"
+      },
+      "KEYS": {
+        "PEER_ASSIGNED": "peerAssigned",
+        "ACTUAL_DELIVERY_DATE": "actualDeliveryDate",
+        "DELIVERY_DATE": "deliveryDate",
+        "STATUS": "status",
+        "PICK_UP_ADDRESS": "pickupAddress",
+        "DROP_OFF_ADDRESS": "dropoffAddress"
+      }
+    },
+    "BRAD_TABLE": {
+      "KEYS": {
+        "LOOKUP_KEY": "lookup_key",
+        "READ": "read",
+        "DELETED_AT": "deleted_at",
+        "UPDATED_AT": "updated_at"
+      }
+    }
+  },
+  "STATUS_CODES": {
+    "SUCCESSFUL_RESPONSE": {
+      "OK": 200,
+      "CREATED": 201
+    },
+    "CLIENT_ERROR_RESPONSE": {
+      "BAD_REQUEST": 400,
+      "NOT_FOUND": 404,
+      "CONFLICT": 409
+    },
+    "SERVER_ERROR_RESPONSE": {
+      "INTERNAL_SERVER_ERROR": 500
+    }
+  },
+  "FORMATS": {
+    "YYYYMMDD": "YYYY-MM-DD"
+  },
+  "BOOLEAN": {
+    "TRUE": "true",
+    "FALSE": "false"
+  }
+}

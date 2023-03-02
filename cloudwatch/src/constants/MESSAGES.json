@@ -1,0 +1,20 @@
+{
+    "SUCCESS": {
+        "SAVE_NOTIFICATIONS": "Save notifications successful!",
+        "SAVE_NOTIFICATIONS_BY_BATCH": "Save notifications by batch successful!",
+        "TOGGLE": "Toggle successful!",
+        "SOFT_DELETE": "Soft delete successful"
+    },
+    "FAILED": {
+        "SAVE_NOTIFICATIONS": "Save notifications failed!",
+        "SAVE_NOTIFICATIONS_BY_BATCH": "Save notifications by batch failed!",
+        "NO_ID": "Please provide value for id.",
+        "NO_BATCH_ID": "Please provide value for batch_id."
+    },
+    "ERRORS": {
+        "BAD_REQUESTS": {
+            "PROVIDE_TOKEN": "Please provide a Bearer token.",
+            "DUPLICATE_CLIENT_ID": "There is a duplicate client id value."
+        }
+    }
+}
