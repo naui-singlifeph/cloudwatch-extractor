@@ -80,8 +80,14 @@ export class CloudwatchExtract {
             .map((x: any) => x.message)
             .forEach((x: any) => {
               if (
-                x.includes("API Response Error") ||
-                x.includes("API Request Data")
+                (x.includes("API Response Error") &&
+                  !x.includes("accio exec") &&
+                  !x.includes("[Invoke.Task.CUSTOMER_CREATE_PROFILE]") &&
+                  (x.includes("TF") || x.includes("SC") || x.includes("NC"))) ||
+                (x.includes("API Request Data") &&
+                  !x.includes("accio exec") &&
+                  !x.includes("[Invoke.Task.CUSTOMER_CREATE_PROFILE]") &&
+                  (x.includes("TF") || x.includes("SC") || x.includes("NC")))
               )
                 events3.push(x);
             });
@@ -104,7 +110,11 @@ export class CloudwatchExtract {
                 )
                   header = c[0];
                 else {
-                  data = JSON.parse(y);
+                  if (!y.includes("{")) {
+                    data = {};
+                  } else {
+                    data = JSON.parse(y);
+                  }
                   if (typeof data !== "object") {
                     data = JSON.parse(data);
                   }
