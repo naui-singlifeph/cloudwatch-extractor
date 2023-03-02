@@ -1,7 +1,10 @@
 # cloudwatch-extractor
- tool for extraction
- 
- set up .env then add Prod AWS cred
+
+tool for extraction
+
+set up .env then add Prod AWS cred
+aws_access_key_id=<KEY HERE>
+aws_secret_access_key=<KEY HERE>
 
 Run npm install
 
